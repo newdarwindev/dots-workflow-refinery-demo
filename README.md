@@ -12,7 +12,9 @@ A public, original React and Storybook prototype for a possible **opt-in workflo
 | --- | --- | --- |
 | ![Review gate](artifacts/review.png) | ![Evaluation](artifacts/evaluation.png) | ![Blocked evaluation](artifacts/evaluation-blocked.png) |
 
-Screenshots are captured by Playwright from the actual React app and checked into this repository. On GitHub Actions, each build captures fresh screenshots as a downloadable workflow artifact. The [static showcase](https://newdarwindev.github.io/dots-workflow-refinery-demo/) and [Storybook](https://newdarwindev.github.io/dots-workflow-refinery-demo/storybook/) links are intended publication targets; check the workflow's deploy job for live status.
+[Watch the actual synthetic workflow test recording](artifacts/workflow-walkthrough.webm) (WebM, captured by Playwright during selection, review, evaluation, promotion, and rollback).
+
+Screenshots and the recording are captured by Playwright from the actual React app and checked into this repository. On GitHub Actions, each build captures fresh screenshots and the interaction recording as a downloadable workflow artifact. The [static showcase](https://newdarwindev.github.io/dots-workflow-refinery-demo/) and [Storybook](https://newdarwindev.github.io/dots-workflow-refinery-demo/storybook/) were verified after the successful Pages deploy.
 
 ## Walkthrough
 
@@ -42,7 +44,7 @@ npm run build
 npm run build-storybook
 ```
 
-Playwright runs with **one browser worker** and tests real interactions: gating, blocked error state, synthetic evaluation, promotion, and rollback. Screenshots are written to `artifacts/`. The local dev server used for tests exits when Playwright completes.
+Playwright runs with **one browser worker** and tests real interactions: gating, blocked error state, synthetic evaluation, promotion, and rollback. Screenshots and the WebM interaction recording are written to `artifacts/`. The local dev server used for tests exits when Playwright completes.
 
 ## Publishing
 
