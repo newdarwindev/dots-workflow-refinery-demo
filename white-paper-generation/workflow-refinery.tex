@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\definecolor{ink}{HTML}{292642}\definecolor{violet}{HTML}{7054DC}
+\hypersetup{colorlinks=true,linkcolor=violet,urlcolor=violet}
+\setlength{\parskip}{0.6em}\setlength{\parindent}{0pt}
+\title{\textcolor{ink}{Workflow Refinery}\\\large A human-guided compute constellation: concept paper}
+\author{Dots Workflow Refinery Demo}
+\date{October 2026 -- Public synthetic concept}
+\begin{document}\maketitle
+\begin{abstract}
+This paper proposes an opt-in refinement layer for selected agent-assisted workflows. A human owner chooses a bounded task, reviews and redacts examples, curates a golden dataset, compares DSPy program and smaller-model candidates, and approves promotion with rollback. The aim is to test whether narrower implementations can reduce compute cost while maintaining or improving delivery quality. This is a design proposal, not a deployed system or measured result. All examples are invented.
+\end{abstract}
+\section{Thesis and boundary}
+Agent-assisted work can reveal repeated computational patterns. A second-layer harness could turn \emph{some} explicitly selected patterns into evaluated, versioned programs. The strong claim that any work in any organization can be reduced to computers under agentic control is a research thesis, not a proven universal fact. Human judgment, relationships, physical work, legal obligations, and consent set important boundaries. A system should never infer permission to collect private conversations from the existence of a repeated pattern.
+
+The proposed ``compute constellation'' describes a portfolio of bounded programs and models, orchestrated under human governance. It might eventually cover internal task routing, support triage, document work, or permissioned research into jobs and contracts. This demo does none of those live activities and makes no external submissions, outreach, or model calls.
+\section{A controlled refinement loop}
+\begin{enumerate}[leftmargin=1.7em]
+\item \textbf{Select and authorize.} A workflow owner defines the task, scope, source permissions, expected outputs, exclusions, and stop conditions. Nothing is captured by default.
+\item \textbf{Review and redact.} Reviewers inspect proposed examples before dataset entry. Remove identifiers, secrets, and irrelevant material; record decisions.
+\item \textbf{Curate a golden dataset.} Version representative inputs and expected outcomes. Preserve provenance and labeling rules. Adjudicate disagreements, document edge cases, and maintain a held-out evaluation set that is not used to optimize candidates.
+\item \textbf{Choose candidates.} Compare a baseline against DSPy program configurations and eligible smaller models. Keep model identity, prompt/program version, dataset version, and evaluation configuration together.
+\item \textbf{Evaluate.} Test quality on held-out cases, error categories, calibration, latency, and total inference cost. Inspect regressions and distribution shifts. A lower-cost candidate advances only if it meets agreed quality and safety thresholds.
+\item \textbf{Approve and promote.} A human reviewer signs off on evidence, scope, and release version. Promote a versioned bundle, not a mutable label.
+\item \textbf{Observe and roll back.} Watch the approved task boundary and defined metrics. Restore the previous bundle if a gate fails; record the reason and feed reviewed cases back into future dataset refinement.
+\end{enumerate}
+\section{Testable hypotheses}
+\textbf{H1:} Some bounded workflows can run on smaller models with acceptable quality. Compare cost and quality under the same task definition and held-out set.\\
+\textbf{H2:} Human-adjudicated golden datasets improve repeatability and error discovery. Compare agreement, coverage, and recurring failure rates across dataset versions.\\
+\textbf{H3:} Versioned artifacts, approvals, and rollback improve governance. Assess reproducibility, review time, and recovery in controlled trials.
+
+No results are asserted here. The interactive demo's 78\% and 92\% scores are simulated UI values, not benchmarks or savings estimates.
+\section{Research domains and limits}
+Internal orchestration could include task routing or summary generation. External research domains could include job discovery, contract mining, and consulting lead qualification. Any such deployment would need separate authorization, data rights, organizational policy, human review, and domain-specific evaluation. This paper does not authorize or perform applications, bids, closing, or outreach. ``Autonomous'' here names a possible future operating mode with human gates, not a present product capability.
+\section{Prototype scope}
+The public React and Storybook showcase demonstrates selection, review, simulated evaluation, promotion, and rollback in local browser state. Playwright tests the actual interaction and records a synthetic walkthrough. There is no DSPy runtime, training, private data connection, provider call, or deployed microservice. Source and artifacts: \href{https://github.com/newdarwindev/dots-workflow-refinery-demo}{public repository}.
+\end{document}

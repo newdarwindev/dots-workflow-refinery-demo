@@ -16,6 +16,16 @@ A public, original React and Storybook prototype for a possible **opt-in workflo
 
 Screenshots and the recording are captured by Playwright from the actual React app and checked into this repository. On GitHub Actions, each build captures fresh screenshots and the interaction recording as a downloadable workflow artifact. The [static showcase](https://newdarwindev.github.io/dots-workflow-refinery-demo/) and [Storybook](https://newdarwindev.github.io/dots-workflow-refinery-demo/storybook/) were verified after the successful Pages deploy.
 
+## Proposed vision and generated materials
+
+The [public vision page](https://newdarwindev.github.io/dots-workflow-refinery-demo/vision.html) explains the proposed human-guided compute constellation: selected workflows, reviewed golden datasets, DSPy and smaller-model candidates, versioned artifacts, human promotion gates, and rollback. Lower compute cost with equal or better quality is a **testable hypothesis**, not a measured outcome. The universal reduction of work to agent-controlled computers is a broad thesis with material human, legal, and physical limits. No private conversations or external work actions are used.
+
+- [Static website generation](site-generation/README.md): Vite source, vision page, and artifact verification.
+- [TeX white paper source](white-paper-generation/workflow-refinery.tex) and [generated PDF](public/resources/workflow-refinery-white-paper.pdf).
+- [Beamer presentation source](presentation-generation/workflow-refinery.tex) and [generated PDF](public/resources/workflow-refinery-presentation.pdf).
+
+The PDFs are generated locally with Tectonic and committed as versioned public artifacts so the existing Pages workflow can publish them without a TeX setup step. Each generator directory has a reproducible command.
+
 ## Walkthrough
 
 1. **Choose:** explicitly select one invented workflow. The demo starts with no selected workflow.

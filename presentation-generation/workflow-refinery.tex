@@ -1,0 +1,52 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\definecolor{deep}{HTML}{292642}\definecolor{violet}{HTML}{7555DF}\definecolor{pale}{HTML}{F2EEFF}
+\setbeamercolor{normal text}{fg=deep,bg=white}\setbeamercolor{frametitle}{fg=deep}\setbeamercolor{structure}{fg=violet}\setbeamercolor{block title}{fg=white,bg=violet}\setbeamercolor{block body}{fg=deep,bg=pale}
+\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[frame number]
+\title{Workflow Refinery}\subtitle{A human-guided compute constellation -- concept, not deployed system}\author{Dots Workflow Refinery Demo}\date{October 2026}
+\begin{document}
+\begin{frame}\titlepage\end{frame}
+\begin{frame}{The proposed second layer}
+\Large Turn \textcolor{violet}{explicitly selected} repeated agent workflows into evaluated, versioned program candidates.\vspace{1em}
+\begin{block}{Hypothesis}A narrower DSPy program on a smaller model may reduce compute cost while maintaining or improving task quality. This must be tested, not assumed.\end{block}
+\end{frame}
+\begin{frame}{The thesis needs boundaries}
+\begin{itemize}\setlength\itemsep{1em}
+\item The claim that all work can be reduced to agent-controlled compute is a research thesis, not established fact.
+\item Human judgment, relationships, physical work, legal duties, and consent still matter.
+\item No workflow or conversation enters the proposed pipeline without explicit scope and review.
+\end{itemize}
+\end{frame}
+\begin{frame}{A controlled refinement loop}
+\begin{enumerate}\setlength\itemsep{0.75em}
+\item Owner selects and authorizes one bounded task.
+\item Reviewers redact examples and adjudicate a golden dataset.
+\item Compare DSPy and smaller-model candidates on held-out cases.
+\item Human approves a versioned artifact bundle.
+\item Monitor the approved scope and roll back on failure.
+\end{enumerate}
+\end{frame}
+\begin{frame}{What the golden dataset contains}
+\begin{columns}[T]\column{0.5\textwidth}\begin{block}{Versioned evidence}Representative inputs, expected outcomes, provenance, labeling rules, and edge cases.\end{block}\column{0.5\textwidth}\begin{block}{Evaluation discipline}A held-out split, disagreement adjudication, error categories, and regression checks.\end{block}\end{columns}
+\vspace{1em}Refinement means improving labels and coverage under review, not silently collecting more private material.
+\end{frame}
+\begin{frame}{Model selection is a measured decision}
+Compare baseline and candidate on the same cases. Record model identity, program version, dataset version, quality, latency, and total inference cost.\vspace{1em}
+\begin{block}{Promotion gate}A lower-cost candidate advances only when it meets predefined quality and safety thresholds and a human reviewer approves.\end{block}
+\end{frame}
+\begin{frame}{Possible domains, no live actions}
+\begin{itemize}\setlength\itemsep{1em}
+\item Internal: support triage, document tagging, task routing.
+\item Future research: job discovery, contract research, consulting lead qualification.
+\item This public demo performs no ingestion, applications, bids, outreach, contract closing, training, or provider calls.
+\end{itemize}
+\end{frame}
+\begin{frame}{What exists today}
+\begin{itemize}\setlength\itemsep{1em}
+\item React and Storybook illustrate selection, review, simulated evaluation, promotion, and rollback.
+\item Playwright tests the UI gates and records a synthetic walkthrough.
+\item All sample records and scores are invented; 78\% and 92\% are simulated interface values.
+\end{itemize}
+\vfill\small Public source: github.com/newdarwindev/dots-workflow-refinery-demo
+\end{frame}
+\end{document}
