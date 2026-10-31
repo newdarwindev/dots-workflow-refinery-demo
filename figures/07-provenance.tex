@@ -1,0 +1,12 @@
+\input{style.tex}
+\begin{tikzpicture}[node distance=.72cm and .55cm]
+\node[actual] (s) {Approved\\source};
+\node[actual,right=of s] (r) {Review +\\redaction};
+\node[actual,right=of r] (d) {Dataset\\version};
+\node[proposed,right=of d] (a) {Candidate\\artifact};
+\node[proposed,right=of a] (p) {Promotion\\record};
+\draw[flow] (s)--(r);\draw[flow] (r)--(d);\draw[dflow] (d)--(a);\draw[dflow] (a)--(p);
+\node[small,below=.45cm of d] {Grouped splits + held-out evidence};
+\node[small,below=.45cm of p] {Approval + rollback pointer};
+\end{tikzpicture}
+\end{document}

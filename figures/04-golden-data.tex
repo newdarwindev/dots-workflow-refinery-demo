@@ -1,0 +1,16 @@
+\input{style.tex}
+\begin{tikzpicture}[node distance=.7cm and .5cm]
+\node[actual] (source) {Invented / approved\\examples};
+\node[actual,right=of source] (review) {Human review\\and redaction};
+\node[actual,right=of review] (group) {Stable group IDs\\deduplicate};
+\node[actual,right=of group] (split) {Versioned\\split};
+\draw[flow] (source)--(review);\draw[flow] (review)--(group);\draw[flow] (group)--(split);
+\node[actual,below=.85cm of split,xshift=-1.9cm] (train) {Train};
+\node[actual,right=.3cm of train] (valid) {Validate};
+\node[actual,right=.3cm of valid] (held) {Held out};
+\draw[flow] (split.south) -- ++(0,-.3) -| (train.north);
+\draw[flow] (split.south) -- (valid.north);
+\draw[flow] (split.south) -- ++(0,-.3) -| (held.north);
+\node[small,below=.4cm of valid] {Offline format / privacy / leakage gates; no quality claim};
+\end{tikzpicture}
+\end{document}

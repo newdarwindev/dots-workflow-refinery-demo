@@ -24,7 +24,7 @@ The [public vision page](https://newdarwindev.github.io/dots-workflow-refinery-d
 - [TeX white paper source](white-paper-generation/workflow-refinery.tex) and [generated PDF](public/resources/workflow-refinery-white-paper.pdf).
 - [Beamer presentation source](presentation-generation/workflow-refinery.tex) and [generated PDF](public/resources/workflow-refinery-presentation.pdf).
 
-The PDFs are generated locally with Tectonic and committed as versioned public artifacts so the existing Pages workflow can publish them without a TeX setup step. Each generator directory has a reproducible command.
+The paper and deck now include [eight original vector diagrams](figures/README.md): five substantive controls and three visual complements. Source diagrams and their compiled PDFs are versioned in `figures/`; the public figures use synthetic labels and distinguish observed patterns from proposals. The PDFs are generated locally with Tectonic and committed as versioned public artifacts so the existing Pages workflow can publish them without a TeX setup step. Each generator directory has a reproducible command.
 
 ## Walkthrough
 

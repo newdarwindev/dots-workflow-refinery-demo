@@ -1,0 +1,13 @@
+\input{style.tex}
+\begin{tikzpicture}[node distance=.75cm and .55cm]
+\node[actual] (idle) {Idle};
+\node[actual,right=of idle] (launch) {Owner-gated\\launch};
+\node[actual,right=of launch] (bind) {Verified\\session bind};
+\node[actual,right=of bind] (active) {Managed turn\\active};
+\node[actual,right=of active] (done) {Stopped or\\completed};
+\draw[flow] (idle)--(launch);\draw[flow] (launch)--(bind);\draw[flow] (bind)--(active);\draw[flow] (active)--(done);
+\node[actual,below=1.1cm of bind] (external) {External session\\observe only};
+\draw[dflow] (external.west) -| node[near start,below,small]{no control grant} (idle.south);
+\node[small,below=.35cm of active] {Interrupt / resume / stop require bound identity};
+\end{tikzpicture}
+\end{document}

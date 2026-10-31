@@ -1,0 +1,14 @@
+\input{style.tex}
+\begin{tikzpicture}[node distance=.65cm and .5cm]
+\node[proposed] (request) {Scoped experiment\\request};
+\node[proposed,right=of request] (job) {Isolated evaluation\\job};
+\node[proposed,right=of job] (artifact) {Versioned result\\+ evidence};
+\draw[dflow] (request)--(job);\draw[dflow] (job)--(artifact);
+\node[small,above=.2cm of job] {Experiment plane (proposed)};
+\node[proposed,below=1.3cm of artifact] (approval) {Human approval\\of exact version};
+\node[proposed,left=of approval] (git) {Reviewed Git\\reference};
+\node[proposed,left=of git] (deploy) {GitOps\\reconciliation};
+\draw[dflow] (artifact)--(approval);\draw[dflow] (approval)--(git);\draw[dflow] (git)--(deploy);
+\node[small,below=.2cm of git] {Deployment plane (proposed); never the experiment runner};
+\end{tikzpicture}
+\end{document}

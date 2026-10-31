@@ -1,0 +1,12 @@
+\input{style.tex}
+\begin{tikzpicture}[node distance=.7cm and 1cm]
+\node[actual] (human) {Human operator\\manual placement};
+\node[actual,below left=1.2cm and 1.2cm of human] (h1) {Always-on host A\\selected app};
+\node[actual,below=1.2cm of human] (h2) {Always-on host B\\selected app};
+\node[actual,below right=1.2cm and 1.2cm of human] (h3) {Always-on host C\\selected app};
+\draw[flow] (human)--(h1);\draw[flow] (human)--(h2);\draw[flow] (human)--(h3);
+\node[proposed,below=.9cm of h2] (ref) {Refinery candidate\\separate future layer};
+\draw[dflow] (h2)--(ref);
+\node[small,right=.3cm of ref] {Dev choice: Compose first; one K3s cluster optional};
+\end{tikzpicture}
+\end{document}

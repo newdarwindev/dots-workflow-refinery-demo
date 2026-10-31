@@ -2,7 +2,7 @@
 
 Source: `workflow-refinery.tex`. Output: `../public/resources/workflow-refinery-presentation.pdf`.
 
-Run from this directory with an installed [Tectonic](https://tectonic-typesetting.github.io/):
+First run the [figure build](../figures/README.md) so the vector PDFs exist. Then run from this directory with an installed [Tectonic](https://tectonic-typesetting.github.io/):
 
 ```sh
 tectonic workflow-refinery.tex --outdir ../public/resources

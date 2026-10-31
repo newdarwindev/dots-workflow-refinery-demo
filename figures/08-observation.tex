@@ -1,0 +1,14 @@
+\input{style.tex}
+\begin{tikzpicture}[x=.75cm,y=.72cm]
+\draw[flow] (0,0)--(11,0) node[right,small]{time};
+\foreach \x/\lab in {0/start,3/observation,6/no update,9/check} {\draw[draw=linegray] (\x,.14)--(\x,-.14);\node[small,below] at (\x,-.18) {\lab};}
+\draw[line width=2.2pt,draw=teal] (0,.55)--(3,.55);
+\draw[line width=2.2pt,draw=amber] (3,.55)--(6,.55);
+\draw[line width=2.2pt,draw=linegray,dashed] (6,.55)--(9,.55);
+\node[small,above] at (1.5,.7) {observed activity};
+\node[small,above] at (4.5,.7) {age increases};
+\node[small,above] at (7.5,.7) {unknown, not failure};
+\node[actual] at (9,1.8) {Verified process check\\before control};
+\draw[flow] (9,1.4)--(9,.85);
+\end{tikzpicture}
+\end{document}

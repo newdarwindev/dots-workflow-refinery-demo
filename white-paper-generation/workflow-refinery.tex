@@ -5,6 +5,7 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{graphicx}
 \definecolor{ink}{HTML}{292642}\definecolor{violet}{HTML}{7054DC}
 \hypersetup{colorlinks=true,linkcolor=violet,urlcolor=violet}
 \setlength{\parskip}{0.6em}\setlength{\parindent}{0pt}
@@ -39,4 +40,44 @@ No results are asserted here. The interactive demo's 78\% and 92\% scores are si
 Internal orchestration could include task routing or summary generation. External research domains could include job discovery, contract mining, and consulting lead qualification. Any such deployment would need separate authorization, data rights, organizational policy, human review, and domain-specific evaluation. This paper does not authorize or perform applications, bids, closing, or outreach. ``Autonomous'' here names a possible future operating mode with human gates, not a present product capability.
 \section{Prototype scope}
 The public React and Storybook showcase demonstrates selection, review, simulated evaluation, promotion, and rollback in local browser state. Playwright tests the actual interaction and records a synthetic walkthrough. There is no DSPy runtime, training, private data connection, provider call, or deployed microservice. Source and artifacts: \href{https://github.com/newdarwindev/dots-workflow-refinery-demo}{public repository}.
+
+\section{Eight architecture views}
+The next five figures explain the substantive control and evidence mechanisms. The final three show composition and time. Solid teal denotes an observed bounded pattern or stated owner premise; dashed amber denotes a proposed component. Labels are synthetic and do not expose private source data.
+
+\subsection{Durable identity binding}
+A session route must be tied to a repository, host process, managed session, and message thread. Canonical worktree matching and verified process identity prevent a label alone from becoming authority. The public figure abstracts a private implementation pattern; it does not imply this service is active.
+\begin{center}\includegraphics[width=.95\linewidth]{../figures/pdf/01-identity.pdf}\\[-2pt]\small Figure 1. Attribution depends on verified identity, not transcript collection.\end{center}
+
+\subsection{Managed-session lifecycle}
+A bounded service can launch a managed turn only through an owner-gated path and bind it after a verified session-start event. External sessions remain observation-only unless separately enrolled. Resume and stop require the bound identity.
+\begin{center}\includegraphics[width=.95\linewidth]{../figures/pdf/02-lifecycle.pdf}\\[-2pt]\small Figure 2. Managed controls and external observation remain distinct.\end{center}
+
+\subsection{Reaction, approval, and execution}
+A reaction is a signal to inspect, not a universal grant. Actor identity, action scope, target, and limits must be checked before a reviewable plan becomes an authorized action. Uncertain results require reconciliation before retry.
+\begin{center}\includegraphics[width=.95\linewidth]{../figures/pdf/03-approval.pdf}\\[-2pt]\small Figure 3. Evidence is separated from authority and execution.\end{center}
+
+\newpage
+\subsection{Reviewed golden-data provenance}
+The offline summarizer pilot uses invented examples with provenance, human review, stable group identifiers, and fixed train, validation, and held-out splits. Its deterministic format, privacy, and leakage checks are pipeline gates, not model-quality scores. A future golden dataset would need independent review and versioning before any model claim.
+\begin{center}\includegraphics[width=.95\linewidth]{../figures/pdf/04-golden-data.pdf}\\[-2pt]\small Figure 4. Grouping and review precede evaluation.\end{center}
+
+\subsection{Experiment and deployment control planes}
+The public refinery architecture proposes isolated experiment jobs and a separate Git-reviewed deployment path. A versioned result, threshold evidence, privacy review, human approval, and rollback reference would be needed before promotion. None of this proposed control plane is deployed by this demo.
+\begin{center}\includegraphics[width=.78\linewidth]{../figures/pdf/05-control-planes.pdf}\\[-2pt]\small Figure 5. Experiments do not deploy themselves.\end{center}
+
+\subsection{Manually placed compute constellation}
+For a development environment, assume machines stay on and humans choose app-to-host placement. A simple Compose setup is the first design option; one K3s cluster is another option if its operational need is demonstrated. The refinery remains a separate future layer. The earlier two-cluster availability sketch is superseded for this scenario.
+\begin{center}\includegraphics[width=.8\linewidth]{../figures/pdf/06-constellation.pdf}\\[-2pt]\small Figure 6. Solid hosts are an assumption; the dashed refinery is proposed.\end{center}
+
+\subsection{Versioned provenance chain}
+An approved source passes through review and redaction into a dataset version. Candidate artifacts and promotion records are future design stages, linked to exact evidence and a rollback pointer. This graph is a lineage contract, not a claim that a live training pipeline exists.
+\begin{center}\includegraphics[width=.95\linewidth]{../figures/pdf/07-provenance.pdf}\\[-2pt]\small Figure 7. Every promotion should retain its source and review trail.\end{center}
+
+\subsection{Observation versus failure}
+Process activity ages between observations. A missing update creates uncertainty; inactivity alone is not proof of failure. A verified process check is required before control. This distinction avoids turning stale metadata into an automatic restart trigger.
+\begin{center}\includegraphics[width=.8\linewidth]{../figures/pdf/08-observation.pdf}\\[-2pt]\small Figure 8. Fresh, aging, and unknown are observation states.\end{center}
+
+\noindent\textbf{Source boundaries.}
+Public design context: \href{https://github.com/newdarwindev/dots-dspy-refinery-architecture}{refinery architecture draft} and \href{https://github.com/newdarwindev/dots-local-sidecar-cloud-infrastructure}{local cloud draft}. Operational patterns are abstracted from access-controlled repositories; no private implementation, chat content, identifiers, credentials, or personal records are reproduced here. The eight diagrams are original vector illustrations under this repository's MIT license.
+
 \end{document}

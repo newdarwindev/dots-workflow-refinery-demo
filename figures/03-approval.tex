@@ -1,0 +1,13 @@
+\input{style.tex}
+\begin{tikzpicture}[node distance=.65cm and .55cm]
+\node[actual] (signal) {Reaction or\\request signal};
+\node[actual,right=of signal] (actor) {Verify actor\\and context};
+\node[actual,right=of actor] (scope) {Resolve scope\\and authority};
+\node[actual,right=of scope] (plan) {Reviewable\\action plan};
+\node[actual,right=of plan] (exec) {Execute only\\authorized step};
+\draw[flow] (signal)--(actor);\draw[flow] (actor)--(scope);\draw[flow] (scope)--(plan);\draw[flow] (plan)--(exec);
+\node[small,below=.45cm of signal] {A reaction is evidence, not permission};
+\node[small,below=.45cm of scope] {Actor, target, limits, and timing};
+\node[small,below=.45cm of exec] {Verify result; reconcile uncertainty};
+\end{tikzpicture}
+\end{document}

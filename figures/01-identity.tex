@@ -1,0 +1,14 @@
+\input{style.tex}
+\begin{tikzpicture}[node distance=1.0cm and .65cm]
+\node[actual] (repo) {Repository\\bounded worktree};
+\node[actual,right=of repo] (host) {Host\\process identity};
+\node[actual,right=of host] (session) {Managed session\\durable context};
+\node[actual,right=of session] (route) {Channel + thread\\verified route};
+\draw[flow] (repo)--node[above,small]{canonical match} (host);
+\draw[flow] (host)--node[above,small]{bind} (session);
+\draw[flow] (session)--node[above,small]{attribute} (route);
+\node[small,below=.35cm of host] (gate) {Unique worktree + owner + process checks};
+\node[small,below=.35cm of route] {No transcript needed for identity};
+\draw[flow] (gate.north)--(host.south);
+\end{tikzpicture}
+\end{document}
